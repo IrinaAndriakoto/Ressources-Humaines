@@ -7,6 +7,20 @@
 	<title>RDV</title>
 </head>
 <body>
-	<h1>hello hello</h1>
+	<h2>Les horaires disponibles :</h2>
+<ul>
+    <?php foreach ($horaires_dispo as $horaire) { ?>
+        <li> <h5>
+            <?= $horaire->jour ?> :
+            <?= $horaire->debut ?> - <?= $horaire->fin ?>
+            ( <?= $horaire->nom_personnel ?>)
+			</h5>
+			<form method="post" action="<?= site_url('CT_rdv/confirmer_rdv') ?>">
+                <input type="hidden" name="horaire_id" value="<?= $horaire->id ?>">
+                <input type="submit" value="Prendre RDV">
+            </form>
+		</li>
+    <?php } ?>
+</ul>
 </body>
 </html>
