@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Accueil</a>
+                        <a class="nav-link" href="<?php echo site_url('CT_accueil/index') ?>">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Services</a>

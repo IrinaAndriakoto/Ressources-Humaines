@@ -14,6 +14,14 @@ CREATE TABLE Personnel(
     contact VARCHAR(50),
     email VARCHAR(50)
 
+    --module 2
+
+    dateDeNaissance date,
+    dateDembauche date,
+    genre varchar(10),
+    direction varchar(50),
+    fonction varchar(50),
+    idDirection integer REFERENCES direction(id)
 );
 
 CREATE TABLE Disponibilite(
@@ -40,6 +48,8 @@ CREATE TABLE Disponibilite(
  inner join CandidatRecuTest as c on pr.id_candidat = c.idcandidatrecutest
  inner join disponibilite as d on pr.id_dispo = d.id
  inner join personnel as p on pr.id_personnel = p.id;
+
+create table direction ( id serial primary key , direction varchar(50));
 
  insert into disponibilite(idpersonnel,jour,debut,fin,dispo) values (1,'lundi','8:00','9:30',true);
  insert into disponibilite(idpersonnel,jour,debut,fin,dispo) values (2,'lundi','10:00','11:30',true);

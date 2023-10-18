@@ -21,6 +21,7 @@ class CT_rdv extends CI_Controller {
 	 */
 
 	public function index() {
+
 		$this->load->model('MD_rdv'); // Remplacez 'Disponibilite_model' par le nom de votre modèle
 	
 		// Appel à la méthode du modèle pour récupérer les horaires disponibles
@@ -37,6 +38,7 @@ class CT_rdv extends CI_Controller {
 		$data['id_candidat'] = $id_candidat; // Où $id_personnel est la valeur que vous souhaitez passer
 		$data['id_dispo'] = $id_dispo; // Où $id_personnel est la valeur que vous souhaitez passer
 
+		// $this->load->view('header');
 		$this->load->view('rdv', $data);
 	}
 
